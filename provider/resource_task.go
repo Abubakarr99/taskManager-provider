@@ -9,7 +9,7 @@ import (
 	"google.golang.org/genproto/googleapis/type/date"
 )
 
-func ResourceTask() *schema.Resource {
+func resourceTask() *schema.Resource {
 	return &schema.Resource{
 		CreateContext: resourceTaskCreate,
 		ReadContext:   resourceTaskRead,
