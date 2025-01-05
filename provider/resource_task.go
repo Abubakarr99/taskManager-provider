@@ -127,7 +127,3 @@ func parseDate(dateStr string) *date.Date {
 	fmt.Sscanf(dateStr, "%d-%d-%d", &year, &month, &day)
 	return &date.Date{Year: int32(year), Month: int32(month), Day: int32(day)}
 }
-
-func formatDate(date *date.Date) string {
-	return fmt.Sprintf("%04d-%02d-%02d", date.Year, date.Month, date.Day)
-}
