@@ -16,7 +16,7 @@ func Provider() *schema.Provider {
 			"taskmanager_task": dataSourceTask(),
 		},
 		Schema: map[string]*schema.Schema{
-			"taskmanager_host": {
+			"host": {
 				Type:        schema.TypeString,
 				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("TASKMANAGER_HOST", nil),

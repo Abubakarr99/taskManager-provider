@@ -16,30 +16,22 @@ func dataSourceTask() *schema.Resource {
 		Schema: map[string]*schema.Schema{
 			"id": {
 				Type:        schema.TypeString,
-				Required:    true,
+				Optional:    true,
 				Description: "The unique ID of the task",
 			},
 			"start_date": {
 				Type:        schema.TypeString,
-				Required:    false,
+				Optional:    true,
 				Description: "The start date to filter task",
 			},
 			"end_date": {
 				Type:        schema.TypeString,
-				Required:    false,
+				Optional:    true,
 				Description: "The end date to filter task",
-			},
-			"title": {
-				Type:     schema.TypeString,
-				Computed: true,
 			},
 			"urgency": {
 				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"due_date": {
-				Type:     schema.TypeString,
-				Computed: true,
+				Optional: true,
 			},
 		},
 	}

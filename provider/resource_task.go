@@ -31,8 +31,17 @@ func resourceTask() *schema.Resource {
 				Required:    true,
 				Description: "The level of urgency of the task",
 			},
+			"due_date": {
+				Type:        schema.TypeString,
+				Required:    true,
+				Description: "The due date of the task",
+			},
 		},
 	}
+}
+
+func formatDate(date *date.Date) string {
+	return fmt.Sprintf("%04d-%02d-%02d", date.Year, date.Month, date.Day)
 }
 
 // resourceTaskCreate creates the task
@@ -105,7 +114,7 @@ func resourceTaskRead(ctx context.Context, d *schema.ResourceData, meta interfac
 	}
 	d.Set("title", tasks[0].Title)
 	d.Set("urgency", tasks[0].Urgency.String())
-	d.Set("due_date", tasks[0].DueDate.String())
+	d.Set("due_date", formatDate(tasks[0].DueDate))
 	return nil
 }
 
